@@ -31,10 +31,9 @@ public class Calculator {
 
 	/**
 	 * The private integer to be used in executing the operation methods
-	 * and the string to print the history of operators
+	 * 
 	 */
 	private int total;
-	private String history = "0";
 	
 	/**
 	 * Creates a new Calculator object with the given name
@@ -51,7 +50,7 @@ public class Calculator {
 	 * @return int This returns an integer total
 	 */
 	public int getTotal () {
-		return total;
+		return 0;
 	}
 	
 	/**
@@ -62,8 +61,6 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void add (int value) {
-		total = total + value;
-		history = history + " + " + value;
 	}
 	
 	/**
@@ -74,8 +71,6 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void subtract (int value) {
-		total = total - value;
-		history = history + " - " + value;
 	}
 	
 	/**
@@ -86,8 +81,6 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void multiply (int value) {
-		total = total * value;
-		history = history + " * " + value;
 	}
 	
 	/**
@@ -99,13 +92,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void divide (int value) {
-		if (value == 0)
-			total = 0;
-		else
-		{
-			total = total / value;
-			history = history + " / " + value;
-		}
+
 	}
 	
 	/**
@@ -115,6 +102,6 @@ public class Calculator {
 	 * @return String This returns a string containing the history of operations
 	 */
 	public String getHistory () {
-		return history;
+		return "";
 	}
 }
