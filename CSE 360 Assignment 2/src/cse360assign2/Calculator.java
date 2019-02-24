@@ -11,7 +11,7 @@ package cse360assign2;
  * that is to be manipulated through arithmetic operators add, subtract, multiply, and divide.
  * The program passes a value that will alter the value stored in total from one of the operators
  * The program also display the current value stored in total and display the history of operators
- * that have been executed since the start of the program at any time.
+ * that have been executed since the start of the program at any time in a string called history.
  * <p>
  * 
  */
@@ -22,15 +22,19 @@ package cse360assign2;
  * declared methods add(), subtract(), multiply(), and divide(). the add() method will add the
  * the parameter to the current total, the subtract() method will subtract the the parameter 
  * from the current total,the multiply() method will multiply the parameter with the current 
- * total,the divide() method will divide the parameter with the current total
+ * total,the divide() method will divide the parameter with the current total. The getTotal() method
+ * will return the current value in total and the getHistory will return a string of numbers and 
+ * operators indicating the history of operations
  *
  */
 public class Calculator {
 
 	/**
 	 * The private integer to be used in executing the operation methods
+	 * and the string to print the history of operators
 	 */
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * Creates a new Calculator object with the given name
@@ -44,44 +48,52 @@ public class Calculator {
 	/**
 	 * This method returns the current value stored in variable total and returns total
 	 * @param There are no parameters
-	 * @return int This returns an integer 0
+	 * @return int This returns an integer total
 	 */
 	public int getTotal () {
 		return total;
 	}
 	
 	/**
-	 * This method is used to add an integer to the current total
+	 * This method is used to add an integer to the current total and add to the 
+	 * history string to indicate that total has been added in the history
 	 * @param value This is the only parameter of the add method which is an integer
 	 * 				that will be added to the current total value
 	 * @return void This returns nothing
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
-	 * This method is used to subtract an integer from the current total
+	 * This method is used to subtract an integer from the current total and add to the 
+	 * history string to indicate that the total has been subtracted in the history
 	 * @param value This is the only parameter of the subtract method which is an integer
 	 * 				that will be added to the current total value
 	 * @return void This returns nothing
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
-	 * This method is used to multiply an integer with the current total
+	 * This method is used to multiply an integer with the current total and add to the 
+	 * history string to indicate that the total has been multiplied in the history
 	 * @param value This is the only parameter of the multiply method which is an integer
 	 * 				that will be added to the current total value
 	 * @return void This returns nothing
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
-	 * This method is used to divide an integer with the current total
+	 * This method is used to divide an integer with the current total and add to the 
+	 * history string to indicate that the total has been divided in the history. If the value
+	 * passed within the parameter is 0, then it returns 0.
 	 * @param value This is the only parameter of the divide method which is an integer
 	 * 				that will be added to the current total value
 	 * @return void This returns nothing
@@ -90,8 +102,10 @@ public class Calculator {
 		if (value == 0)
 			total = 0;
 		else
-			
+		{
 			total = total / value;
+			history = history + " / " + value;
+		}
 	}
 	
 	/**
@@ -101,6 +115,6 @@ public class Calculator {
 	 * @return String This returns a string containing the history of operations
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
