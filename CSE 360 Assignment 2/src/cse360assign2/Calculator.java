@@ -42,13 +42,12 @@ public class Calculator {
 	}
 	
 	/**
-	 * This method prints out the current value stored in variable total and returns
-	 *  a zero when completed
+	 * This method returns the current value stored in variable total and returns total
 	 * @param There are no parameters
 	 * @return int This returns an integer 0
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -58,7 +57,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void add (int value) {
-		
+		total = total + value;
 	}
 	
 	/**
@@ -68,7 +67,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
@@ -78,7 +77,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	
 	/**
@@ -88,7 +87,11 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void divide (int value) {
-		
+		if (value == 0)
+			total = 0;
+		else
+			
+			total = total / value;
 	}
 	
 	/**
