@@ -31,7 +31,7 @@ public class Calculator {
 
 	/**
 	 * The private integer to be used in executing the operation methods
-	 * 
+	 * and the string to print the history of operators
 	 */
 	private int total;
 	
@@ -50,7 +50,7 @@ public class Calculator {
 	 * @return int This returns an integer total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -61,6 +61,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void add (int value) {
+		total = total + value;
 	}
 	
 	/**
@@ -71,6 +72,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void subtract (int value) {
+		total = total - value;
 	}
 	
 	/**
@@ -81,6 +83,7 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void multiply (int value) {
+		total = total * value;
 	}
 	
 	/**
@@ -92,7 +95,12 @@ public class Calculator {
 	 * @return void This returns nothing
 	 */
 	public void divide (int value) {
-
+		if (value == 0)
+			total = 0;
+		else
+		{
+			total = total / value;
+		}
 	}
 	
 	/**
